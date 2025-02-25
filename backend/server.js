@@ -7,7 +7,7 @@ const PORT = 5000;
 
 app.use(cors());
 
-const token = 'ab1e119aa0009ad6457795f39f927f27d17a645e4d45b73a17fcda0861392c1b'; // Tu token aquí
+const token = 'ab1e119aa0009ad6457795f39f927f27d17a645e4d45b73a17fcda0861392c1b'; 
 
 app.get('/api/tipo-cambio', async (req, res) => {
   const { startDate, endDate } = req.query;
