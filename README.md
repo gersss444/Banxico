@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Aplicación de Consulta de Tipo de Cambio Banxico
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación web  que permite consultar información histórica del tipo de cambio del peso mexicano utilizando la API oficial de Banxico (Banco de México).
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- **Consulta histórica**: Obtén tipos de cambio por rango de fechas personalizable
+- **Interfaz intuitiva**: Selectores de fecha fáciles de usar
+- **Datos oficiales**: Información directa de la API oficial de Banxico
+- **Tiempo real**: Actualización automática de datos al cambiar fechas
+- **Responsive**: Diseño adaptable a diferentes dispositivos
+- **Arquitectura**: Frontend React + Backend Node.js/Express
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- **React 19** - Biblioteca de interfaz de usuario
+- **Axios** - Cliente HTTP para peticiones API
+- **date-fns** - Manipulación de fechas
+- **CSS3** - Estilos personalizados
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- **Node.js** - Entorno de ejecución JavaScript
+- **Express.js** - Framework web para Node.js
+- **Axios** - Cliente HTTP para conectar con API de Banxico
+- **CORS** - Manejo de políticas de origen cruzado
 
-### `npm test`
+## Prerrequisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Antes de ejecutar este proyecto, asegúrate de tener instalado:
 
-### `npm run build`
+- [Node.js](https://nodejs.org/) (versión 14 o superior)
+- [npm](https://www.npmjs.com/) (incluido con Node.js)
+- Conexión a internet para acceder a la API de Banxico
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalación
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Instala las dependencias del backend**
+   ```bash
+   cd backend
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Instala las dependencias del frontend**
+   ```bash
+   cd ..
+   npm install
+   ```
 
-### `npm run eject`
+## Ejecución
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Opción 1: Ejecutar ambos servicios manualmente
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Inicia el servidor backend** (Terminal 1)
+   ```bash
+   cd backend
+   node server.js
+   ```
+   El servidor estará disponible en `http://localhost:5000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Inicia la aplicación React** (Terminal 2)
+   ```bash
+   npm start
+   ```
+   La aplicación se abrirá automáticamente en `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Opción 2: Usar scripts de desarrollo 
 
-## Learn More
+```bash
+# Terminal 1 - Backend
+cd backend && node server.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Terminal 2 - Frontend  
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Configuración de API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+El proyecto utiliza la API oficial de Banxico con las siguientes configuraciones:
 
-### Analyzing the Bundle Size
+- **Serie**: SF43718 (Tipo de cambio peso-dólar)
+- **Token**: Configurado en el código (requiere token válido de Banxico)
+- **Base URL**: `https://www.banxico.org.mx/SieAPIRest/service/v1/series/`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
